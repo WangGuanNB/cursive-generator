@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursive Generator - Transform Text into Beautiful Cursive Fonts Online Free</title>
+    <meta name="description" content="Free online cursive generator to convert your text into elegant cursive fonts. Create beautiful cursive writing for signatures, social media, tattoos and more. No download required.">
+    <meta name="keywords" content="cursive generator, cursive font generator, cursive text generator, cursive writing generator, online cursive converter, free cursive fonts">
+    <link rel="canonical" href="https://yoursite.com/">
+    <meta property="og:title" content="Cursive Generator - Transform Text into Beautiful Cursive Fonts">
+    <meta property="og:description" content="Free online cursive generator to convert your text into elegant cursive fonts instantly. Perfect for signatures, social media, and creative projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/">
+    
+    <!-- Google Fonts for authentic cursive styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Pacifico&family=Satisfy&family=Kaushan+Script&family=Allura&family=Alex+Brush&family=Amatic+SC:wght@400;700&family=Caveat:wght@400;500;600;700&family=Indie+Flower&family=Sacramento&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+            --accent-purple: #AF52DE;
+            --accent-green: #30D158;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--background) 0%, #F2F2F7 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Generator Tool */
+        .generator-tool {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px var(--shadow);
+            margin: 2rem auto;
+            max-width: 800px;
+            border: 1px solid var(--border);
+        }
+
+        .input-section {
+            margin-bottom: 2rem;
+        }
+
+        .input-section label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .style-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .style-option {
+            background: var(--background);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 500;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .style-option:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .style-option.active {
+            border-color: var(--primary-blue);
+            background: rgba(0, 122, 255, 0.1);
+        }
+
+        .output-section {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cursive-output {
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--text-primary);
+            text-align: center;
+            word-break: break-word;
+            line-height: 1.2;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056D6;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .use-cases h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .use-case {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .use-case h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .use-case p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #86868B;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3A3A3C;
+            padding-top: 1rem;
+            color: #86868B;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 0 4rem;
+            }
+
+            .generator-tool {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+
+            .style-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features,
+            .use-cases {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .style-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .cursive-output {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">✍️ CursiveGen</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#generator">Generator</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Free Cursive Generator</h1>
+                <p>Transform your text into beautiful cursive fonts instantly. Perfect for signatures, social media, tattoos, and creative projects. No registration required.</p>
+            </div>
+        </section>
+
+        <section id="generator" class="container">
+            <div class="generator-tool">
+                <div class="input-section">
+                    <label for="textInput">Enter Your Text:</label>
+                    <textarea 
+                        id="textInput" 
+                        class="text-input" 
+                        placeholder="Type your text here..."
+                        rows="3"
+                    >Hello Beautiful World</textarea>
+                </div>
+
+                <div class="style-selector">
+                    <div class="style-option active" data-style="dancing-script" style="font-family: 'Dancing Script', cursive;">
+                        Dancing Script
+                    </div>
+                    <div class="style-option" data-style="great-vibes" style="font-family: 'Great Vibes', cursive;">
+                        Great Vibes
+                    </div>
+                    <div class="style-option" data-style="allura" style="font-family: 'Allura', cursive;">
+                        Allura
+                    </div>
+                    <div class="style-option" data-style="alex-brush" style="font-family: 'Alex Brush', cursive;">
+                        Alex Brush
+                    </div>
+                    <div class="style-option" data-style="sacramento" style="font-family: 'Sacramento', cursive;">
+                        Sacramento
+                    </div>
+                    <div class="style-option" data-style="kaushan-script" style="font-family: 'Kaushan Script', cursive;">
+                        Kaushan Script
+                    </div>
+                    <div class="style-option" data-style="satisfy" style="font-family: 'Satisfy', cursive;">
+                        Satisfy
+                    </div>
+                    <div class="style-option" data-style="caveat" style="font-family: 'Caveat', cursive;">
+                        Caveat
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <div id="cursiveOutput" class="cursive-output">
+                        Hello Beautiful World
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="copyToClipboard()">
+                        📋 Copy Text
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadAsImage()">
+                        📸 Download Image
+                    </button>
+                    <button class="btn btn-secondary" onclick="generateNew()">
+                        🔄 Generate New
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Why Choose Our Cursive Generator?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Generation</h3>
+                        <p>Convert your text to cursive in seconds. No waiting, no processing time - just instant beautiful results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🆓</div>
+                        <h3>Completely Free</h3>
+                        <p>Use our cursive generator without any cost. No hidden fees, no subscriptions, no registration required.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on all devices - desktop, tablet, or mobile. Generate cursive text anywhere, anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Multiple Styles</h3>
+                        <p>Choose from various cursive styles to match your project needs. From elegant to decorative fonts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Easy Copy & Paste</h3>
+                        <p>Copy generated cursive text with one click and paste it anywhere - social media, documents, or websites.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🖼️</div>
+                        <h3>Image Export</h3>
+                        <p>Download your cursive text as high-quality images for use in designs, presentations, or printing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases" class="use-cases">
+            <div class="container">
+                <h2>Perfect for Every Occasion</h2>
+                <div class="use-cases-grid">
+                    <div class="use-case">
+                        <h3>✍️ Digital Signatures</h3>
+                        <p>Create elegant cursive signatures for emails, documents, and professional correspondence.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>📱 Social Media</h3>
+                        <p>Stand out on Instagram, TikTok, and other platforms with beautiful cursive usernames and bios.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>🎨 Tattoo Design</h3>
+                        <p>Visualize how your text will look in cursive before getting that perfect tattoo design.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>💌 Invitations</h3>
+                        <p>Add elegance to wedding invitations, party cards, and special event announcements.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>🎓 Educational</h3>
+                        <p>Help students learn cursive writing with practice sheets and visual examples.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>🖥️ Web Design</h3>
+                        <p>Incorporate beautiful cursive fonts into websites, logos, and digital designs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <a href="/signature-generator">Signature Generator</a>
+                    <a href="/name-generator">Name Generator</a>
+                    <a href="/tattoo-generator">Tattoo Generator</a>
+                    <a href="/worksheet-generator">Practice Worksheets</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="/guide">Cursive Writing Guide</a>
+                    <a href="/fonts">Font Collection</a>
+                    <a href="/tutorial">How to Use</a>
+                    <a href="/faq">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <a href="/about">About Us</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CursiveGen. All rights reserved. Transform your text into beautiful cursive fonts online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const textInput = document.getElementById('textInput');
+        const cursiveOutput = document.getElementById('cursiveOutput');
+        const styleOptions = document.querySelectorAll('.style-option');
+
+        // Font styles mapping
+        const fontStyles = {
+            'dancing-script': "'Dancing Script', cursive",
+            'great-vibes': "'Great Vibes', cursive",
+            'allura': "'Allura', cursive",
+            'alex-brush': "'Alex Brush', cursive",
+            'sacramento': "'Sacramento', cursive",
+            'kaushan-script': "'Kaushan Script', cursive",
+            'satisfy': "'Satisfy', cursive",
+            'caveat': "'Caveat', cursive"
+        };
+
+        let currentStyle = 'dancing-script';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOutput();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Text input listener
+            textInput.addEventListener('input', updateOutput);
+
+            // Style selector listeners
+            styleOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove active class from all options
+                    styleOptions.forEach(opt => opt.classList.remove('active'));
+                    
+                    // Add active class to clicked option
+                    this.classList.add('active');
+                    
+                    // Update current style
+                    currentStyle = this.dataset.style;
+                    updateOutput();
+                });
+            });
+        }
+
+        function updateOutput() {
+            const text = textInput.value || 'Hello Beautiful World';
+            cursiveOutput.textContent = text;
+            cursiveOutput.style.fontFamily = fontStyles[currentStyle];
+        }
+
+        function copyToClipboard() {
+            const text = cursiveOutput.textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Text copied to clipboard!');
+                }).catch(() => {
+                    fallbackCopyToClipboard(text);
+                });
+            } else {
+                fallbackCopyToClipboard(text);
+            }
+        }
+
+        function fallbackCopyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('Text copied to clipboard!');
+            } catch (err) {
+                showNotification('Failed to copy text');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function downloadAsImage() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const text = cursiveOutput.textContent;
+            
+            // Set canvas size
+            canvas.width = 800;
+            canvas.height = 200;
+            
+            // Set background
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Set text style
+            ctx.fillStyle = '#1D1D1F';
+            ctx.font = `48px ${fontStyles[currentStyle].replace(/'/g, '')}`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Draw text
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.download = 'cursive-text.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            
+            showNotification('Image downloaded!');
+        }
+
+        function generateNew() {
+            const sampleTexts = [
+                'Beautiful Handwriting',
+                'Elegant Script',
+                'Cursive Excellence',
+                'Stylish Writing',
+                'Graceful Letters',
+                'Artistic Text',
+                'Flowing Words',
+                'Classic Cursive'
+            ];
+            
+            const randomText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
+            textInput.value = randomText;
+            updateOutput();
+            showNotification('New text generated!');
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #007AFF;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                font-weight: 500;
+                z-index: 1000;
+                box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
