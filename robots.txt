@@ -1,0 +1,16 @@
+# robots.txt for cursivegenerator.space
+# 允许所有搜索引擎访问所有内容
+
+User-agent: *
+Allow: /
+
+# 指定 sitemap 位置
+Sitemap: https://cursivegenerator.space/sitemap.xml
+
+# 可选：如果有不想被搜索引擎抓取的文件或目录，可以添加
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: *.tmp$
+
+# 抓取延迟（可选，避免服务器负载过高）
+# Crawl-delay: 1
